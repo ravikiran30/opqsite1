@@ -31,10 +31,10 @@ const menuItems = [
       }
     ]
   },
-  {
-    title: 'Workshop',
-    link: '/workshop'
-  },
+  // {
+  //   title: 'Workshop',
+  //   link: '/workshop'
+  // },
   {
     title: 'Blogs',
     link: '/blog'
@@ -157,9 +157,9 @@ const NavBar = () => {
               )}
             </div>
           ))}
-          <Button variant="contained" component={Link} to='/login'>
+          {/* <Button variant="contained" component={Link} to='/login'>
             Login
-          </Button>
+          </Button> */}
         </Box>
       </Toolbar>
     </AppBar>

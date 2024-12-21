@@ -41,13 +41,13 @@ const Contactus = () => {
             toast.error('Please complete the CAPTCHA');
           return;
         }
-    
-        axios.post('http://localhost:8001/api/contact', {
+    // 'http://localhost:8001/api/contact'
+        axios.post('https://gidyalupuc.execute-api.ap-south-1.amazonaws.com/pord13', {
             name: data.name,
             phone_number: data.phone,
             email: data.email,
             message: data.message,
-            contactMethod: data.method,
+            // contactMethod: data.method,
           captchaToken,
         }).then((response) => {
           if (response.status === 200) {
@@ -57,7 +57,7 @@ const Contactus = () => {
           }else{
             toast.error('An error occurred while submitting the form');
           }
-        });
+        }).catch((error)=>console.log(error));
     
     }
   
@@ -158,7 +158,7 @@ const Contactus = () => {
                                  {errors.message && <p className='text-red-500'>{errors.message.message}</p>}
                             </div>
 
-                            <div className="mb-4">
+                            {/* <div className="mb-4">
                                 <label className="block text-gray-700 font-semibold mb-2">Select a Contact Method:<span className="text-red-500">*</span></label>
                                 <div className="flex items-center mb-2">
                                     <input
@@ -180,7 +180,7 @@ const Contactus = () => {
                                     <label htmlFor="message" className="text-gray-700">Message</label>
                                 </div>
                                 {errors.method && <p className='text-red-500'>{errors.method.message}</p>}
-                            </div>
+                            </div> */}
 
 
 
