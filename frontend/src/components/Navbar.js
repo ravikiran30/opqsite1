@@ -16,20 +16,21 @@ const menuItems = [
   },
   {
     title: 'Courses',
-    submenu: [
-      {
-        title: 'Full Stack Developer Course',
-        link: '/courses/2'
-      },
-      {
-        title: 'DevOps Bootcamp',
-        link: '/courses/1'
-      },
-      {
-        title: 'AWS Cloud Practitioner',
-        link: '/courses/3'
-      }
-    ]
+    link:'/courses'
+    // submenu: [
+    //   {
+    //     title: 'Full Stack Developer Course',
+    //     link: '/courses/2'
+    //   },
+    //   {
+    //     title: 'DevOps Bootcamp',
+    //     link: '/courses/1'
+    //   }
+      // {
+      //   title: 'AWS Cloud Practitioner',
+      //   link: '/courses/3'
+      // }
+    // ]
   },
   // {
   //   title: 'Workshop',

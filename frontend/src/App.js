@@ -19,6 +19,7 @@ import Wsaws from './components/Wsaws';
 import Contactus from './components/Contactus';
 import Dashboard from './components/Dashboard';
 import Enroll from './components/Enroll';
+import Courses from './components/Courses';
 
 
 const LazyHome =React.lazy(()=> import ("./components/Home"))
@@ -38,6 +39,7 @@ function App() {
           <Route path='/blog' element={<Blog />} />
           {/* <Route path='/course/fswd' element={<Fswd/>} />
           <Route path='/course/aws' element={<Fswd/>} /> */}
+           <Route path='/courses' element={<Courses/>} />
           <Route path='/courses/:courseID' element={<Fswd/>} />
           <Route path='/contact/faqs' element={<Faqs/>} />
           <Route path='/login' element={<Login/>} />

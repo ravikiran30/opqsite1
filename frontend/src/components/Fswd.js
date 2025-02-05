@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+
 const Fswd = () => {
+    const navigate = useNavigate();
     const { courseID } = useParams();
     const [courseData, setCourseData] = useState({});
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
    
 
     // Form state
@@ -33,47 +36,49 @@ const Fswd = () => {
 
     
  
-    const handleOpen = () => {
-        setIsOpen(true);
-    };
+    // const handleOpen = () => {
+    //     setIsOpen(true);
+    // };
 
-    const handleClose = () => {
-        setIsOpen(false);
-    };
+    // const handleClose = () => {
+    //     setIsOpen(false);
+    // };
 
     // Handle form input changes
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
+    // const handleInputChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setFormData(prevState => ({
+    //         ...prevState,
+    //         [name]: value
+    //     }));
+    // };
 
     // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = () => {
+        navigate(`/contact/contactus`);
+        // e.preventDefault();
 
-        axios.post('http://localhost:8001/api/courses/enroll', {
-            fullname: formData.fullName,
-            email: formData.email,
-            contact: formData.contactNumber,
-            city: formData.city,
-            course_name: courseData.course_name
-        })
-            .then(response => {
-                toast.success('Enrollment form successful!',{autoClose:1000});
-                setFormData({
-                    fullName: '',
-                    email: '',
-                    contactNumber: '',
-                    city: ''
-                });
-                handleClose(); 
-            })
-            .catch(error => {
-                console.error('Error during enrollment:', error);
-            });
+        // axios.post('http://localhost:8001/api/courses/enroll', {
+        //     fullname: formData.fullName,
+        //     email: formData.email,
+        //     contact: formData.contactNumber,
+        //     city: formData.city,
+        //     course_name: courseData.course_name
+        // })
+        //     .then(response => {
+        //         toast.success('Enrollment form successful!',{autoClose:1000});
+        //         setFormData({
+        //             fullName: '',
+        //             email: '',
+        //             contactNumber: '',
+        //             city: ''
+        //         });
+        //         handleClose(); 
+        //     })
+        //     .catch(error => {
+        //         console.error('Error during enrollment:', error);
+        //     });
+       
     };
 
     return (
@@ -119,7 +124,7 @@ const Fswd = () => {
                         <div className='border border-2 my-[4rem] mx-[4rem] h-[38rem] border-black rounded-md p-[2rem] lg:max-w-[30rem] sticky top-[100px] bg-[#FCF8F3]'>
                             {/* Image */}
                             <div><img src={`http://localhost:8001/uploads/${courseData.banner_image}`} alt="Course Banner" className='pb-[2rem] hover:scale-110' /></div>
-                            <div><button className='bg-cyan-400 px-[2rem] rounded-md' onClick={handleOpen}>Enroll Now &nbsp;&nbsp;&nbsp; ₹ {courseData.course_fee}</button></div>
+                            <div><button className='bg-cyan-400 px-[2rem] rounded-md' onClick={handleSubmit}>Enroll Now &nbsp;&nbsp;&nbsp; ₹ {courseData.course_fee}</button></div>
                             <div className='flex flex-row pt-[2rem]'>
                                 <div><img src='https://www.opqbootcamp.com/assets/img/feature-icons/icon-1.png' className='object-cover h-10 w-10 ' alt='' /></div>
                                 <div><p className='p-[1rem]'>Live virtual classes taught by industry experts</p></div>
@@ -137,10 +142,10 @@ const Fswd = () => {
                 </div>
             </div>
 
-            {isOpen && (
+            {/* {isOpen && (
                 <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
                     <div className='bg-white rounded-lg shadow-lg p-8 max-w-lg w-full mx-4'>
-                        {/* Header Section */}
+                       
                         <div className='flex justify-between items-center mb-6'>
                             <h1 className='text-2xl font-semibold text-gray-800'>Enroll Now</h1>
                             <button
@@ -151,7 +156,7 @@ const Fswd = () => {
                             </button>
                         </div>
 
-                        {/* Form Section */}
+                     
                         <form onSubmit={handleSubmit}>
                             <div className='space-y-4'>
                                 <div>
@@ -214,7 +219,9 @@ const Fswd = () => {
                         </form>
                     </div>
                 </div>
-            )}
+            )} 
+            */}
+
         </section>
     );
 };

@@ -24,7 +24,7 @@ const Courses = () => {
             "what_will_you_learn": "The OPQ Tech DevOps Bootcamp Program is designed to provide you with the opportunity to learn the latest technologies in the IT industry. The course is designed to help you become a DevOps Engineer while also providing you with the opportunity to work alongside talented professionals. As a result, you may be able to join an international working environment anywhere in the world.\r\n\r\nThe course will be led by experienced and practitioner Software Development Academy trainers. Trainers will prepare you to meet the requirements of an OPQ Tech DevOps Engineer providing Industry Solutions. You will have the opportunity to join a thriving and promising IT sector if you take online classes. You will be given a new set of unique skills that will help you.\r\n\r\n",
             "course_requirements": "The OPQ Tech DevOps Bootcamp will teach you how to master the art and science of optimizing the development and operational activities of your entire team. This DevOps course will show you how to use configuration management tools such as Puppet, Salt Stack, and Ansible to gain experience in continuous deployment.",
             "who_is_this_course_for": "Anyone who needs a thorough understanding of OPQ Tech DevOps principles, such as project and business managers, IT quality assurance, testing, and service management professionals, and anyone involved in the development, operation, and delivery of IT services.\r\n\r\nIf you are a beginner or a seasoned IT professional who is constantly striving for self-improvement\r\n\r\nDo you want to learn about the most recent technological standards?\r\n\r\nIf you have decided to change your career path,\r\n\r\nIf you want to work for one of the country's largest IT firms,",
-            "course_image": "d9556b5c4b3421dc63c89fb338e5fd51",
+            "course_image": img1,
             "banner_image": "0701d9f83dd75b35e48f6d3e23e8d646",
             "syllabus_pdf": "a8aee6e8ee5377612f0430ee00180079",
             "status": "done"
@@ -42,7 +42,7 @@ const Courses = () => {
             "what_will_you_learn": "A full-stack web developer is a software specialist who is proficient in both front end and back end programming, as well as Angular and NodeJS in particular. Learn the essentials of HTML 5 as well as the fundamentals of JavaScript and TypeScript. NodeJS and Angular advanced concepts, as well as MongoDB concepts Learn how to debug programmes and acquire a certificate at the completion of this course.\r\n",
             "course_requirements": "Full Stack Developer is a comprehensive training program designed to equip participants with the skills and knowledge required to build end-to-end web applications. This course is intended for individuals who want to learn the latest web development technologies and frameworks. \r\n\r\nThe course will cover a range of topics, including:\r\n\r\nBasics of programming language \r\n1.Front-end development using HTML, CSS, JavaScript, and popular front-end frameworks such as React, Angular, or Vue.js\r\n2.Back-end development using popular programming languages such as Node.js, Python, Ruby on Rails, or PHP\r\n3.Databases and data modeling with SQL and NoSQL databases such as MySQL, MongoDB, or Postgres\r\nRESTful API design and development\r\n4.Deployment and hosting of web applications on cloud platforms such as AWS, Azure, or GCP\r\n5.Agile development methodologies, Git, and version control\r\n6.User experience design and testing, and accessibility considerations\r\n7.On Job Training - In Agile model, develop a realtime project using MERN stack. \r\nThroughout the course, participants will work on hands-on exercises, assignments, Q&A sessions, mini and major projects to apply their learning in real-world scenarios. By the end of the course, participants will have an in-depth understanding of full-stack development principles and best practices, as well as the practical skills needed to build and deploy modern web applications.",
             "who_is_this_course_for": "~Provide regular assignments to understand and solve real-time scenarios\r\n~Free Webinars in Real Time\r\n~Question and Answer sessions for enhancing skills\r\n~Mock Interviews and Quizzes are available indefinitely\r\n~Access to the course material and videos for the rest of your life\r\n~Experiential Learning in Real-World Projects\r\n~Offline Job Interviews\r\n~Job Opportunities in Full Stack Web Development.",
-            "course_image": "ffb2a51d2fe5d1e27d1b06b7ff3583e8",
+            "course_image": img3,
             "banner_image": "fa493e6988cef33b15a598925675ae77",
             "syllabus_pdf": "63de76319915d26e9edcf7aa75527215",
             "status": "done"
@@ -60,9 +60,9 @@ const Courses = () => {
     //         });
     // }, []);
 
-    // const handleView = (courseID) => {
-    //     navigate(`/courses/${courseID}`);
-    // };
+    const handleView = () => {
+        navigate(`/contact/contactus`);
+    };
 
 
     return (
@@ -76,7 +76,7 @@ const Courses = () => {
                     {courses.map((course, index) => (
                         <div key={index} className="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
                             <img
-                                src={`http://localhost:8001/uploads/${course.course_image}`}
+                                src={course.course_image}
                                 alt={course.course_name}
                                 className="w-full md:w-1/3 h-48 object-cover rounded-lg md:rounded-none md:mr-6"
                             />
@@ -85,9 +85,9 @@ const Courses = () => {
                                 <p className="text-gray-600 mb-4">{course.short_description}</p>
                                 <button
                                    
-                                    className="text-blue-500 hover:text-blue-700 font-semibold" 
+                                    className="text-blue-500 hover:text-blue-700 font-semibold"  onClick={() => handleView()}
                                 >
-                                    {/* onClick{() => handleView(course.courseID)} */}
+                                   
                                     Learn More
                                 </button>
                             </div>
